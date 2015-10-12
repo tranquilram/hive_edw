@@ -1,0 +1,34 @@
+{
+    "OrderId": "1234",
+    "OrderType": 1,
+    "CustomerDetails": [
+        {
+            "FirstName": "Peggy",
+            "LastName": "Williams",
+            "CustomerId": 123
+        }
+    ],
+    "OrderClassCollection": [
+        {
+            "ProdutId": "1234567",
+            "ProductName": "Abcdeg",
+            "Merchant": "Abcd",
+            "Price": 100,
+            "ProductOnPromotion": false
+        },
+        {
+            "ProdutId": "9876345",
+            "ProductName": "Abcdeg",
+            "Merchant": "Abcd",
+            "Price": 100,
+            "ProductOnPromotion": false
+        },
+        {
+            "ProdutId": "12345987",
+            "ProductName": "Abcdeg",
+            "Merchant": "Abcd",
+            "Price": 100,
+            "ProductOnPromotion": false
+        }
+    ]
+}
