@@ -1,0 +1,36 @@
+--running from commandline gives great control
+--always refer to the hive doc https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-Show
+--
+
+
+
+--enter hive
+hive
+create database json_test;
+show databases;
+use json_test;
+show tables;
+
+--command line
+[cloudera@quickstart data]$ pwd
+/home/cloudera/code/hive_edw/data
+--load the file first into hdfs
+hadoop fs -mkdir /user/cloudera/data
+hadoop fs -mkdir /user/cloudera/data/students
+hadoop fs -put ./students.json /user/cloudera/data/students/students.json
+
+--enter hive
+hive
+
+--create the below table manually and point it to the hive_edw/data/students.json file.
+DROP TABLE IF EXISTS StudentsRaw;
+CREATE EXTERNAL TABLE StudentsRaw (textcol string) STORED AS TEXTFILE LOCATION 
+
+DROP TABLE IF EXISTS StudentsOneLine;
+CREATE EXTERNAL TABLE StudentsOneLine
+(
+  json_body string
+)
+STORED AS TEXTFILE LOCATION '/user/cloudera/data/students';
+hive> select *
+    > from StudentsOneLine;
